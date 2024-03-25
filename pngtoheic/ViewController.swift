@@ -59,56 +59,6 @@ class ViewController: UIViewController {
                 print("Error: \(error.localizedDescription)")
             }
         }
-
-//        jsonList.forEach { url in
-//            do {
-//                // Users/yanguosun/Developer/aiheadshot/Aihelper/Assets.xcassets/settingicon.imageset/Contents.json
-//                // let jsonPath = url.deletingLastPathComponent().appendingPathComponent("Contents.json")
-//                do {
-//                    let data = try Data(contentsOf: url)
-//                    if let json = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
-//                        var jsonNew = json
-//                        if let images = json["images"] as? [[String: Any]] {
-//                            images.forEach { ainfo in
-//                                if let filename = ainfo["filename"] as? String, let scale = ainfo["scale"] as? String {
-//                                    let imgPath = url.deletingLastPathComponent().appendingPathComponent(filename)
-//                                    print("sss")
-//                                    // 确保文件夹 URL 是有效的
-//                                    var isDirectory: ObjCBool = false
-//                                    let exists = fileManager.fileExists(atPath: imgPath.path, isDirectory: &isDirectory)
-//                                    if exists {
-//                                        if let imgData = try? Data(contentsOf: imgPath) {
-//                                            
-//                                            guard let pureName = url.deletingLastPathComponent().lastPathComponent.components(separatedBy: ".").first else {
-//                                                return
-//                                            }
-//                                            
-//                                            let pureNameFull = "\(pureName)@\(scale).heic"
-//                                            let imgPathHeic = url.deletingLastPathComponent().appendingPathComponent(pureNameFull)
-//                                            
-//                                            if let heicData = convertPNGToHEIC(pngImageData: imgData, quality: 1.0) {
-//                                                // try? heicData.write(to: URL(fileURLWithPath: "/Users/yanguosun/Developer/pngtoheic/output").appendingPathComponent("\(pureName)@\(scale).heic"))
-//                                                jsonNew["filename"] = imgPathHeic
-//                                                try? heicData.write(to: imgPathHeic)
-//                                                try? fileManager.removeItem(at: imgPath)
-//                                            }
-//                                        }
-//                                    }
-//                                }
-//                            }
-//                        }
-//                    }
-//                    
-//                    // 处理解析后的 JSON 对象
-//                } catch {
-//                    print("Error reading JSON file: \(error.localizedDescription)")
-//                }
-//                //
-//            } catch {
-//                print("sss")
-//            }
-//        }
-        // Do any additional setup after loading the view.
     }
     
     func getFilesAsJSON(fromFolderPath path: String, fileType: String? = nil) -> [URL] {
