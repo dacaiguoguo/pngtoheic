@@ -14,8 +14,8 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         let jsonList = getFilesAsJSON(fromFolderPath: "/Users/yanguosun/Developer/aiheadshot/Aihelper/Assets.xcassets", fileType: "json")
-        //        let sss = getFilesAsJSON(fromFolderPath: "/Users/yanguosun/Developer/aiheadshot/Aihelper/Assets.xcassets", fileType: "png")
-        // print(jsonList)
+//                let jsonList = getFilesAsJSON(fromFolderPath: "/Users/yanguosun/Developer/aiheadshot/Aihelper/Assets.xcassets", fileType: "png")
+//         print(jsonList)
         let fileManager = FileManager.default
 
         jsonList.forEach { url in
